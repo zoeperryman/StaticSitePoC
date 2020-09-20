@@ -1,15 +1,18 @@
 {
     "routes": [
       {
-        "route": "/",
-        "allowedRoles": ["authenticated"]
+        "route": "/"
       },
+      {
+        "route": "/hello",
+        "allowedRoles": ["authenticated"]
+      },      
       {
         "route": "/api/*",
         "allowedRoles": ["authenticated"]
       },
       {
-        "route": "/login",
+        "route": "/loginaad",
         "serve": "/.auth/login/aad"
       },
       {
@@ -41,7 +44,7 @@
       {
         "errorType": "Unauthenticated",
         "statusCode": "302",
-        "serve": "/login"
+        "serve": "/"
       }
     ],
     "defaultHeaders": {
