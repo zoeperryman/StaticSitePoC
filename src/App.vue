@@ -38,7 +38,7 @@ export default class App extends Vue {
       if (response.ok) {
         const json = await response.json();
 
-        this.$store.commit("setAuthentication", json);
+        this.$store.commit("setAuthentication", json.clientPrincipal);
       } else {
         alert(
           "Server returned " + response.status + " : " + response.statusText

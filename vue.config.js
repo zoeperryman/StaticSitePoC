@@ -5,12 +5,19 @@ module.exports = {
         before: function(app) {
             app.get('/.auth/me', function(req, res) {
       
-                //res.json({});
+                /*res.json({
+                    clientPrincipal: null
+                  });*/
                 res.json({
-                    identityProvider: "facebook",
-                    userId: "d75b260a64504067bfc5b2905e3b8182",
-                    userDetails: "user@example.com",
-                    userRoles: [ "anonymous", "authenticated" ]
+                    clientPrincipal: {
+                      identityProvider: "aad",
+                      userId: "abc123testuser",
+                      userDetails: "test.user@flipgroup.com.au",
+                      userRoles: [
+                        "anonymous",
+                        "authenticated"
+                      ]
+                    }
                   });
             });
           },
