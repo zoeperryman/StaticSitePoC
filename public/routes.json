@@ -5,6 +5,10 @@
         "allowedRoles": ["authenticated"]
       },
       {
+        "route": "/login",
+        "serve": "/login.html"
+      },      
+      {
         "route": "/loginaad",
         "serve": "/.auth/login/aad"
       },
@@ -17,7 +21,7 @@
         "statusCode": "404"
       },
       {
-        "route": ".auth/login/github",
+        "route": "/.auth/login/github",
         "statusCode": "404"
       },
       {
@@ -31,7 +35,8 @@
       {
         "route": "/*",
         "serve": "/index.html",
-        "statusCode": 200
+        "statusCode": 200,
+        "allowedRoles": ["authenticated"]
       }      
     ],
     "platformErrorOverrides": [
@@ -42,7 +47,7 @@
       {
         "errorType": "Unauthenticated",
         "statusCode": "302",
-        "serve": "/"
+        "serve": "/login.html"
       }
     ],
     "defaultHeaders": {
