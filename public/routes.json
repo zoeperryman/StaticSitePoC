@@ -14,7 +14,7 @@
       },
       {
         "route": "/logingoogle",
-        "statusCode": "/.auth/login/google"
+        "serve": "/.auth/login/google"
       },          
       {
         "route": "/.auth/login/facebook",
