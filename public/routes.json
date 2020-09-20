@@ -47,7 +47,7 @@
       {
         "errorType": "Unauthenticated",
         "statusCode": "302",
-        "serve": "/login.html"
+        "serve": "/login"
       }
     ],
     "defaultHeaders": {
