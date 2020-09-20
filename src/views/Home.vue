@@ -2,9 +2,10 @@
   <div class="home">
     <h1>Welcome to the admin app</h1>
 
-    <router-link to="/loginaad">Login with AAD</router-link>
-    <router-link to="/logingoogle">Login with Google</router-link>
-    <router-link to="/hello">Hello - Only when logged in</router-link>
+    <a href="/loginaad">Login with AAD</a><br/>
+    <a href="/logingoogle">Login with Google</a><br/>
+
+    <router-link to="/hello">Hello - Only when logged in</router-link><br/>
 
   </div>
 </template>

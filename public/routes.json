@@ -1,13 +1,6 @@
 {
     "routes": [
       {
-        "route": "/"
-      },
-      {
-        "route": "/hello",
-        "allowedRoles": ["authenticated"]
-      },      
-      {
         "route": "/api/*",
         "allowedRoles": ["authenticated"]
       },
@@ -34,7 +27,12 @@
       {
         "route": "/logout",
         "serve": "/.auth/logout"
-      }
+      },
+      {
+        "route": "/*",
+        "serve": "/index.html",
+        "statusCode": 200
+      }      
     ],
     "platformErrorOverrides": [
       {
