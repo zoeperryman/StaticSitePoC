@@ -1,12 +1,56 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+  <div v-if="authenticated">
+    <div id="app">
+      <img alt="Vue logo" src="./assets/logo.png">
 
-    <!-- component matched by the route will render here -->
-    <router-view></router-view>
+      <!-- component matched by the route will render here -->
+      <router-view></router-view>
+    </div>
+  </div>
+  <div v-else>
+    <div>
+      Loading...
+    </div>
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+@Component
+export default class App extends Vue {
+
+  get authenticated() {
+    return this.$store.state.authenticated;
+  }
+
+  created() {
+    //do something
+    this.fetchUser();
+  }
+
+  async fetchUser() {
+    try {
+      const response = await fetch("/.auth/me", {
+        method: "GET",
+      });
+
+      if (response.ok) {
+        const json = await response.json();
+
+        this.$store.commit("setAuthentication", json);
+      } else {
+        alert(
+          "Server returned " + response.status + " : " + response.statusText
+        );
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+}
+
+</script>
 
 <style>
 #app {
