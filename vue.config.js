@@ -26,12 +26,7 @@ module.exports = {
 
           '^/api': {
             target: 'http://localhost:7071',
-            //ws: true,
-            //changeOrigin: true
-          },
-          '^/.auth/me': {
-            target: '<other_url>'
-          }     
+          }
         }   
     }
 }
